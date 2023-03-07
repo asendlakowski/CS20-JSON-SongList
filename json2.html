@@ -17,6 +17,7 @@
         let JSONData;
         function genreSelect(genre) {
             selectGenre = genre;
+            console.log(genre);
         }
 
         function printSong(song) {
@@ -30,7 +31,19 @@
 
         function filter() {
             console.log(selectGenre);
-            JSONData.forEach(printSong(song));
+            // JSONData.forEach(printSong(song));
+            for (let i = 0; i < JSONData.length; i++) {
+                if (JSONData[i].genre == selectGenre) {
+
+                }
+                
+                strHTML = //"<li>" 
+                song.title + "<br/>" 
+                + "Artist: " + song.artist + "<br/>"
+                + "Genre: " + song.genre + "<br/>" 
+                + "Released " + song.year + "<br/> <br/>";
+            document.write(strHTML)
+            }
         }
 
     $.getJSON ( "./songs.json", 
