@@ -28,7 +28,7 @@
                 for (let i = 0; i < song.genre.length; i++) {
                     if (!(genres.includes(song.genre[i]))) {
                         genres.push(song.genre[i]);
-                        console.log(genres.toString);
+                        console.log(genres.join(", "));
                     }
                 }
             }) 
