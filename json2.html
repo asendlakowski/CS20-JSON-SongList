@@ -18,7 +18,7 @@
             const genres = [];
 			str = JSON.stringify(data);
 			document.write(str +"<br/> <br/>");
-		    strHTML= ""//"<ul>";
+		    strHTML = ""//"<ul>";
             data.forEach(function(song) { 
                 strHTML += //"<li>" 
                         song.title + "<br/>" 
@@ -34,6 +34,23 @@
             }) 
             strHTML += ""//"</ul>";
             document.write (strHTML);  /**/
+            strHTML = "<select id='genres' name='genres' >";
+            strHTML += "<option value=''>Select Genre</option>";
+            for (let i = 0; i < genres.length; i++) {
+                strHTML += "<option id='" + genres[i] + "' value='" + genres[i] + "'onclick='genreSelect(" + genres[i] + ")''>" + genres[i] + "</option>";
+            }
+            strHTML += "</select>";
+
+            //also write to the document the dropdown for each genre
+
+        //     <select id="location" name="location" required>
+        //     <option value="">Select Location</option>
+        //     <option id="0" value="Seattle, WA" onclick="locationSelect(0)">Seattle, WA</option>
+        //     <option id="1" value="Medford, MA" onclick="locationSelect(1)">Medford, MA</option>
+        //     <option id="2" value="Danville, CA" onclick="locationSelect(2)">Danville, CA</option>
+        //     <option id="3" value="Los Altos, CA" onclick="locationSelect(3)">Los Altos, CA</option>
+        //     <option id="4" value="Kuala Lumbr, Malaysia" onclick="locationSelect(4)">Kuala Lumbr, Malaysia</option>
+        // </select>
             
 
 	})
