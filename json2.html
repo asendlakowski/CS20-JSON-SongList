@@ -34,14 +34,15 @@
             }) 
             strHTML += ""//"</ul>";
             document.write (strHTML);  /**/
-            strHTML = "<select id='genres' name='genres' >";
+            strHTML = "<form> <select id='genres' name='genres' >";
             strHTML += "<option value=''>Select Genre</option>";
             for (let i = 0; i < genres.length; i++) {
                 strHTML += "<option id='" + genres[i] + "' value='" + genres[i] + "'onclick='genreSelect(" + genres[i] + ")''>" + genres[i] + "</option>";
             }
             strHTML += "</select>";
-	    document.write (strHTML);
-
+            strHTML += "<input type = 'button' value = 'Filter' onclick='filter()'/>";
+            strHTML += "</form>";
+            document.write (strHTML);
             //also write to the document the dropdown for each genre
 
         //     <select id="location" name="location" required>
