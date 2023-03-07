@@ -14,17 +14,29 @@
 	<script>
 
         let selectGenre = "";
+        let JSONData;
         function genreSelect(genre) {
             selectGenre = genre;
         }
 
+        function printSong(song) {
+            strHTML = //"<li>" 
+                song.title + "<br/>" 
+                + "Artist: " + song.artist + "<br/>"
+                + "Genre: " + song.genre + "<br/>" 
+                + "Released " + song.year + "<br/> <br/>";
+            document.write(strHTML)
+        }
+
         function filter() {
             console.log(selectGenre);
+            JSONData.forEach(printSong(song));
         }
 
     $.getJSON ( "./songs.json", 
 		function( data ) {
             console.log("hello")
+            JSONData = data;
             const genres = [];
 			str = JSON.stringify(data);
 			document.write(str +"<br/> <br/>");
