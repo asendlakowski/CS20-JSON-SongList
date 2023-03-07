@@ -12,6 +12,16 @@
 
 <body>
 	<script>
+
+        let selectGenre = "";
+        function genreSelect(genre) {
+            selectGenre = genre;
+        }
+
+        function filter() {
+            console.log(selectGenre);
+        }
+
     $.getJSON ( "./songs.json", 
 		function( data ) {
             console.log("hello")
