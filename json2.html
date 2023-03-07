@@ -17,14 +17,14 @@
             console.log("hello")
             const genres = [];
 			str = JSON.stringify(data);
-			document.write(str +"<br/>");
+			document.write(str +"<br/> <br/>");
 		    strHTML= ""//"<ul>";
             data.forEach(function(song) { 
                 strHTML += //"<li>" 
                         song.title + "<br/>" 
                         + "Artist: " + song.artist + "<br/>"
                         + "Genre: " + song.genre + "<br/>" 
-                        + "Released " + song.year + "<br/>";
+                        + "Released " + song.year + "<br/> <br/>";
                 for (let i = 0; i < song.genre.length; i++) {
                     if (!(genres.includes(song.genre[i]))) {
                         genres.push(song.genre[i]);
