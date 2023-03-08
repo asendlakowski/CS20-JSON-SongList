@@ -33,6 +33,8 @@
         function filter() {
             console.log(selectGenre);
             // JSONData.forEach(printSong(song));
+            var genre = document.getElementById("genres").value;
+            console.log(genre);
             for (let i = 0; i < JSONData.length; i++) {
                 if (JSONData[i].genre == selectGenre) {
                     console.log(i);
