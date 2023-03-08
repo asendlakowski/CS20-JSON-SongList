@@ -73,7 +73,7 @@
             strHTML = "<form> <select id='genres' name='genres' >";
             strHTML += "<option value=''>Select Genre</option>";
             for (let i = 0; i < genres.length; i++) {
-                strHTML += "<option id='" + genres[i] + "' value='" + genres[i] + "'onclick='genreSelect(" + genres[i] + ")''>" + genres[i] + "</option>";
+                strHTML += "<option id='" + genres[i] + "' value='" + genres[i] + "'onclick='genreSelect(" + genres[i] + ")'>" + genres[i] + "</option>";
             }
             strHTML += "</select>";
             strHTML += "<input type = 'button' value = 'Filter' onclick='filter()'/>";
