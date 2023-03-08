@@ -40,7 +40,9 @@
             console.log(selectGenre);
             for (let i = 0; i < JSONData.length; i++) {
                 console.log(JSON.stringify(JSONData[i]));
-                if (JSONData[i].genre == selectGenre) {
+                let songGenres = JSONData[i].genre;
+
+                if (songGenres.includes(selectGenre)) {
                     console.log(i);
                 }
                 
