@@ -13,10 +13,10 @@
 <body>
 	<script>
 
-        let selectGenre = "";
+        //let selectGenre = "";
         let JSONData;
         function genreSelect(genre) {
-            selectGenre = genre;
+            //selectGenre = genre;
             console.log("hello");
             console.log(genre);
         }
@@ -31,9 +31,9 @@
         }
 
         function filter() {
-            console.log(selectGenre);
+            //console.log(selectGenre);
             // JSONData.forEach(printSong(song));
-            var genre = document.getElementById("genres").value;
+            var selectGenre = document.getElementById("genres").value;
             console.log(genre);
             for (let i = 0; i < JSONData.length; i++) {
                 if (JSONData[i].genre == selectGenre) {
