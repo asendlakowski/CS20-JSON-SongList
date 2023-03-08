@@ -25,15 +25,18 @@
         }
 
         function filter() {
+            //document.getElementById("filtered")
             let selectGenre = document.getElementById("genres").value;
+            strHTML = "";
             let JSONData = JSON.parse(stringData);
             for (let i = 0; i < JSONData.length; i++) {
                 let songGenres = JSONData[i].genre;
                 if (songGenres.includes(selectGenre)) {
-                    strHTML = JSONData[i].title + "<br/>";
-                    document.write(strHTML);
+                    strHTML += JSONData[i].title + "<br/>";
+                    //document.write(strHTML);
                 }
             }
+            document.getElementById("filtered").innerHTML = strHTML;
         }
 
     $.getJSON ( "./songs.json", 
@@ -70,6 +73,7 @@
             strHTML += "</select>";
             strHTML += "<input type = 'button' value = 'Filter' onclick='filter()'/>";
             strHTML += "</form>";
+            strHTML += "<div id='filtered'></div>";
             document.write (strHTML);
             console.log(strHTML);
 	})
