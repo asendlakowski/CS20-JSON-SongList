@@ -33,13 +33,13 @@
         function filter() {
             //console.log(selectGenre);
             // JSONData.forEach(printSong(song));
-            var selectGenre = document.getElementById("genres").value;
+            let selectGenre = document.getElementById("genres").value;
             let JSONData = JSON.parse(stringData);
             str = JSON.stringify(JSONData);
-			console.log(str);
-            //console.log(genre);
+			//console.log(str);
+            console.log(selectGenre);
             for (let i = 0; i < JSONData.length; i++) {
-                console.log("for loop" + i);
+                console.log(JSON.stringify(JSONData[i]));
                 if (JSONData[i].genre == selectGenre) {
                     console.log(i);
                 }
