@@ -11,7 +11,7 @@
 	</style>
 </head>
 
-<body>
+<body style="background-color: rgb(48, 169, 185);">
 	<script>
 
         //let selectGenre = "";
@@ -71,8 +71,8 @@
             document.write("<h1>User Friendly Song List Display</h1> <br/>");
 		    strHTML = ""//"<ul>";
             data.forEach(function(song) { 
-                strHTML += //"<li>" 
-                        song.title + "<br/>" 
+                strHTML += "<b>" + //"<li>" 
+                        song.title + "</b> <br/>" 
                         + "Artist: " + song.artist + "<br/>"
                         + "Genre: " + song.genre.join(", ") + "<br/>" 
                         + "Released " + song.year + "<br/> <br/>";
