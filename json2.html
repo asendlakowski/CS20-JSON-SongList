@@ -65,9 +65,9 @@
             stringData = JSON.stringify(data);
             const genres = [];
 			str = JSON.stringify(data);
-            document.write("<h1>Raw JSON Data</h1> <br/> <br/>");
+            document.write("<h1>Raw JSON Data</h1> <br/>");
 			document.write(str +"<br/> <br/>");
-            document.write("<h1>User Friendly Song List Display</h1> <br/> <br/>");
+            document.write("<h1>User Friendly Song List Display</h1> <br/>");
 		    strHTML = ""//"<ul>";
             data.forEach(function(song) { 
                 strHTML += //"<li>" 
@@ -84,7 +84,7 @@
             }) 
             strHTML += ""//"</ul>";
             document.write (strHTML);  /**/
-            document.write("<h1>Filter Data</h1> <br/> <br/>");
+            document.write("<h1>Filter Data</h1> <br/>");
             strHTML = "<form> <select id='genres' name='genres' >";
             strHTML += "<option value=''>Select Genre</option>";
             for (let i = 0; i < genres.length; i++) {
