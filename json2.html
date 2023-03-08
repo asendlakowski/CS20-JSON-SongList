@@ -5,25 +5,22 @@
 <title>JSON Song List</title>
 <script   src="https://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
 	<style>
-		body,html{font-size: 20px; background-color: rgb(48, 169, 185)}
-        body{background-color: rgb(48, 169, 185)}
+		body,html{font-size: 20px;}
 	
 	</style>
 </head>
 
-<body style="background-color: rgb(48, 169, 185);">
+<body>
 	<script>
 
-        //let selectGenre = "";
         let stringData = "";
         function genreSelect(genre) {
-            //selectGenre = genre;
             console.log("hello");
             console.log(genre);
         }
 
         function printSong(song) {
-            strHTML = //"<li>" 
+            strHTML =
                 song.title + "<br/>" 
                 + "Artist: " + song.artist + "<br/>"
                 + "Genre: " + song.genre + "<br/>" 
@@ -32,31 +29,14 @@
         }
 
         function filter() {
-            //console.log(selectGenre);
-            // JSONData.forEach(printSong(song));
             let selectGenre = document.getElementById("genres").value;
             let JSONData = JSON.parse(stringData);
-            str = JSON.stringify(JSONData);
-			//console.log(str);
-            console.log(selectGenre);
             for (let i = 0; i < JSONData.length; i++) {
-                console.log(JSON.stringify(JSONData[i]));
                 let songGenres = JSONData[i].genre;
-
                 if (songGenres.includes(selectGenre)) {
-                    console.log(i);
-                    strHTML = //"<li>" 
-                    JSONData[i].title + "<br/>";
-                    document.write(strHTML)
-
+                    strHTML = JSONData[i].title + "<br/>";
+                    document.write(strHTML);
                 }
-                
-            //     strHTML = //"<li>" 
-            //     song.title + "<br/>" 
-            //     + "Artist: " + song.artist + "<br/>"
-            //     + "Genre: " + song.genre + "<br/>" 
-            //     + "Released " + song.year + "<br/> <br/>";
-            // document.write(strHTML)
             }
         }
 
@@ -69,9 +49,9 @@
             document.write("<h1>Raw JSON Data</h1> <br/>");
 			document.write(str +"<br/> <br/>");
             document.write("<h1>User Friendly Song List Display</h1> <br/>");
-		    strHTML = ""//"<ul>";
+		    strHTML = "";
             data.forEach(function(song) { 
-                strHTML += "<b>" + //"<li>" 
+                strHTML += "<b>" + 
                         song.title + "</b> <br/>" 
                         + "Artist: " + song.artist + "<br/>"
                         + "Genre: " + song.genre.join(", ") + "<br/>" 
@@ -83,8 +63,8 @@
                     }
                 }
             }) 
-            strHTML += ""//"</ul>";
-            document.write (strHTML);  /**/
+            strHTML += "";
+            document.write (strHTML);
             document.write("<h1>Filter Data</h1> <br/>");
             strHTML = "<form> <select id='genres' name='genres' >";
             strHTML += "<option value=''>Select Genre</option>";
@@ -96,27 +76,7 @@
             strHTML += "</form>";
             document.write (strHTML);
             console.log(strHTML);
-            //also write to the document the dropdown for each genre
-
-        //     <select id="location" name="location" required>
-        //     <option value="">Select Location</option>
-        //     <option id="0" value="Seattle, WA" onclick="locationSelect(0)">Seattle, WA</option>
-        //     <option id="1" value="Medford, MA" onclick="locationSelect(1)">Medford, MA</option>
-        //     <option id="2" value="Danville, CA" onclick="locationSelect(2)">Danville, CA</option>
-        //     <option id="3" value="Los Altos, CA" onclick="locationSelect(3)">Los Altos, CA</option>
-        //     <option id="4" value="Kuala Lumbr, Malaysia" onclick="locationSelect(4)">Kuala Lumbr, Malaysia</option>
-        // </select>
-            
-
 	})
-
-	//document.write (phil["first_name"] + "<br>");
- 	// strStudent  = JSON.stringify(list);
-	// document.write(JSON.stringify(list))
-  	//jsonStudent = JSON.parse(strStudent);
-	//document.write (jsonStudent["first_name"] + "<br>");
-		
-	//document.write (phil.first_name + "<br>");*/
 	</script>
 </body>
 </html>
