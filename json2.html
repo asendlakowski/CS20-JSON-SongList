@@ -34,7 +34,7 @@
             //console.log(selectGenre);
             // JSONData.forEach(printSong(song));
             var selectGenre = document.getElementById("genres").value;
-            let JSONData = parse(stringData);
+            let JSONData = JSON.parse(stringData);
             console.log(genre);
             for (let i = 0; i < JSONData.length; i++) {
                 if (JSONData[i].genre == selectGenre) {
@@ -53,7 +53,7 @@
     $.getJSON ( "./songs.json", 
 		function( data ) {
             console.log("hello")
-            stringData = stringify(data);
+            stringData = JSON.stringify(data);
             const genres = [];
 			str = JSON.stringify(data);
 			document.write(str +"<br/> <br/>");
